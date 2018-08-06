@@ -1,16 +1,22 @@
 /*-------------Node and 3rd party modules-------------*/
 const express = require('express');
-
+const hbs = require('hbs');
 /*------------------Personnel Modules-----------------*/
 
 /*-------------------Initialisations------------------*/
 const app = express();
+app.use(express.static(__dirname + '/public'));
+app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views/partials');
 
 /*------------------------Code------------------------*/
-app.use(express.static(__dirname + '/public'));
 
-app.get('/', (req, res)=> {
-    res.send('<h1>Hello Express</h1>');
+app.get('/homi', (req, res)=> {
+    res.render('home.hbs',{
+        domaine_name : 'express-web-server.net',
+        author : '<a href="https://github.com/BOUGUESRIAdel">BOUGUESRI Adel</a>',
+        date : new Date().toDateString()
+    });
     
 });
 
