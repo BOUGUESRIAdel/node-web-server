@@ -21,7 +21,6 @@ app.get('/homi', (req, res)=> {
 });
 
 app.get('/about', (req, res)=> {
-    //res.send('<h1>about page</h1>');
     res.send({
         domaine_name : 'express-web-server.net',
         decription : 'a web app to practise creation of node web servers using Express.JS',
