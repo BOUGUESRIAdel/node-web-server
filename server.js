@@ -8,14 +8,15 @@ const app = express();
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
-
+hbs.registerHelper('getCurrentDate', ()=>{
+    return new Date().toDateString();
+});
 /*------------------------Code------------------------*/
 
-app.get('/homi', (req, res)=> {
+app.get('/home', (req, res)=> {
     res.render('home.hbs',{
         domaine_name : 'express-web-server.net',
         author : '<a href="https://github.com/BOUGUESRIAdel">BOUGUESRI Adel</a>',
-        date : new Date().toDateString()
     });
     
 });
