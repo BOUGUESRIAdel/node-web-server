@@ -18,7 +18,7 @@ hbs.registerHelper('getCurrentDate', ()=>{
 
 /*------------------------Code------------------------*/
 
-/* ---- server log hadler ---- */
+/* ---- server log handler ---- */
 
 app.use((req, res, next) => {
     var date = new Date().toString();
@@ -32,6 +32,8 @@ app.use((req, res, next) => {
     });
     next();
 });
+
+/* ---- routes handler ---- */
 
 app.get('/home', (req, res)=> {
     jsonfile.readFile('public/hbs/ressource/blogs.json', (err, data) => {
