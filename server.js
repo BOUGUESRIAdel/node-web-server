@@ -36,12 +36,12 @@ app.use((req, res, next) => {
 
 /* ---- website down handler ---- */
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
     res.render('maintenance.hbs',{
         domaine_name : 'express-web-server.net',
         author : '<a href="https://github.com/BOUGUESRIAdel">BOUGUESRI Adel</a>'
     });
-});
+}); */
 
 /* ---- routes handler ---- */
 
