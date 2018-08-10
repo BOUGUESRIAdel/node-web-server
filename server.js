@@ -45,7 +45,7 @@ app.use((req, res, next) => {
 
 /* ---- routes handler ---- */
 
-app.get('/home', (req, res)=> {
+app.get('/', (req, res)=> {
     jsonfile.readFile('public/hbs/ressource/blogs.json', (err, data) => {
         res.render('home.hbs',data);
     });
